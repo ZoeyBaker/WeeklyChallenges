@@ -116,8 +116,16 @@ namespace ChallengesWithTestsMark8
             {
                 return 1;
             }
+            if (number < 0)
+            {
+                throw new ArgumentOutOfRangeException();
+            }
 
-            return number * Factorial(number - 1);
+            for (var i = number - 1; i >= 1; i--)
+            {
+                number *= i;
+            }
+            return number;
 
         }
     }
